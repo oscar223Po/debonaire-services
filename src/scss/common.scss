@@ -1,0 +1,77 @@
+//========================================================================================================================================================
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+::-webkit-scrollbar {
+	width: toRem(1);
+	border-radius: toRem(10);
+	background-color: $bgColor;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: toRem(10);
+	background-color: $mainColor;
+}
+::selection {
+	background-color: rgba(#a60101, 0.5);
+}
+//========================================================================================================================================================
+// Title
+.title {
+	color: #fff;
+	line-height: 120%;
+	font-family: $fontFamilySc;
+	letter-spacing: toRem(-1.5);
+	transition: color 0.5s ease 0s;
+	@include adaptiveValue("font-size", 40, 24, 0, 1026, 320);
+	&--big {
+		line-height: 1.1;
+		@include adaptiveValue("font-size", 60, 36, 0, 1440, 320);
+	}
+	&--min {
+		@include adaptiveValue("font-size", 30, 22, 0, 1440, 320);
+	}
+}
+// Text
+.text {
+	line-height: 1.5;
+	display: inline-block;
+	p {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+}
+// Button Book
+.book {
+	color: #fff;
+	font-weight: 500;
+	line-height: 1.31;
+	position: relative;
+	padding-top: toRem(5);
+	padding-left: toRem(3);
+	padding-right: toRem(3);
+	padding-bottom: toRem(5);
+	letter-spacing: toRem(-0.4);
+	&::after {
+		left: 0;
+		top: 100%;
+		content: "";
+		width: 100%;
+		height: 2px;
+		position: absolute;
+		background-color: $redColor;
+		transition: all 0.3s ease 0s;
+	}
+	span {
+		z-index: 1;
+		position: relative;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&::after {
+				top: 0;
+				height: 100%;
+			}
+		}
+	}
+}
+//========================================================================================================================================================

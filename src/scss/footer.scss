@@ -1,0 +1,82 @@
+//========================================================================================================================================================
+// Footer
+.footer {
+	@include adaptiveValue("padding-top", 100, 40);
+	@include adaptiveValue("padding-bottom", 100, 40);
+	// .footer__container
+	&__container {
+	}
+	// .footer__content
+	&__content {
+		display: flex;
+		gap: toRem(20);
+		margin: 0 auto;
+		max-width: toRem(1270);
+		align-items: flex-start;
+		justify-content: space-between;
+		@media (max-width: toEm(859.98)) {
+			gap: toRem(30);
+			text-align: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+	// .footer__menu
+	&__menu {
+		display: grid;
+		row-gap: toRem(30);
+		grid-auto-flow: column;
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("column-gap", 75, 15);
+		@media (max-width: toEm(859.98)) {
+			row-gap: toRem(25);
+		}
+	}
+	// .footer__invite
+	&__invite {
+	}
+}
+.menu-footer {
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		color: #fff;
+		font-weight: 500;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $redColor;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.invite {
+	@media (min-width: toEm(860)) {
+		text-align: right;
+	}
+	// .invite__title
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(22);
+		}
+	}
+	// .invite__link
+	&__link {
+		color: $redColor;
+		font-size: toRem(30);
+		font-family: $fontFamilySc;
+		text-decoration: underline;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+				text-decoration: none;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
